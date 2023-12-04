@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 
 export const StatisticsItem = styled('li')`
-/* flex-basis: calc(100%/3); */
 flex-basis:100%;
 height: 100%;
 padding: 15px;

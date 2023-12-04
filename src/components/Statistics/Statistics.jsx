@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types';
+
 import { StatisticsList } from "./StatisticsList.stayled"
 import { StatisticsItem } from "./StatisticsItem.stayled"
 import { StatisticsLabel } from "./StatisticsLabel.stayled"
@@ -8,7 +9,6 @@ import {StatisticsTitle } from "./StatisticsTitle.stayled"
 const Statistics = ({ title, stats }) => {
     return (<section className="statistics">
         {title && <StatisticsTitle>{title}</StatisticsTitle>}
-
         <StatisticsList>
             {stats.map((item, index) => <StatisticsItem id={index} key={item.id}>
                 <StatisticsLabel>{item.label} </StatisticsLabel>
@@ -17,7 +17,6 @@ const Statistics = ({ title, stats }) => {
         </StatisticsList>
     </section>)
 };
-
 
 Statistics.propTypes = {
     title: PropTypes.string,

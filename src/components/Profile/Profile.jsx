@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types';
+
 import { ProfileContainer } from "./ProfileContainer.stayled"
 import { Description } from "./Description.stayled"
 import { UserInfo } from "./UserInfo.stayled"
