@@ -1,24 +1,19 @@
 import PropTypes from 'prop-types';
 
-import { FriendsList } from "./FriendsList.stayled"
-import { FriendsItem } from "./FriendsItem.stayled"
-import { FriendsStatus} from "./FriendsStatus.stayled"
+import FriendListItem from "../FriendListItem/FriendListItem"
 
-const FriendList = ({friends}) => {
+import { FriendsList } from "./FriendsList.stayled"
+
+const FriendList = ({ friends }) => {
     return (
         <FriendsList>
-
-        {friends.map((item) => <FriendsItem key={item.id}>
-            <FriendsStatus $status={item.isOnline.toString()}></FriendsStatus>
-            <img src={item.avatar} alt="User avatar" width="48" />
-            <p>{item.name}</p>
-        </FriendsItem>)}
-    </FriendsList>)
+            {friends.map(({ id, isOnline, avatar, name }) => <FriendListItem key={id} isOnline={isOnline.toString()} avatar={avatar} name={name} />)}
+        </FriendsList>)
 };
 
 
 FriendList.propTypes = {
-    friends: PropTypes.array,
+    friends: PropTypes.arrayOf(PropTypes.object).isRequired,
 }
 
 export default FriendList;

@@ -1,19 +1,10 @@
 import PropTypes from 'prop-types';
 
-import { ProfileContainer } from "./ProfileContainer.stayled"
-import { Description } from "./Description.stayled"
-import { UserInfo } from "./UserInfo.stayled"
-import { UserName } from "./UserName.stayled"
-import { UserPhoto } from "./UserPhoto.stayled"
-import { UserStat } from "./UserStat.stayled"
-import { UserStatItem } from "./UserStatItem.stayled"
-import { UserStatLabel } from "./UserStatLabel.stayled"
-import {UserStatQuantity } from "./UserStatQuantity.stayled"
+import {Description, ProfileContainer, UserInfo, UserName, UserPhoto, UserStat, UserStatItem, UserStatLabel, UserStatQuantity } from "./Profile.stayled"
 
 
 
-const Profile = ({data}) => {
-    const { avatar, username, tag, location, stats: {followers, views, likes} } = data;
+const Profile = ({ avatar, username, tag, location, stats: {followers, views, likes} }) => {
     return (
       <ProfileContainer>
   <Description>
@@ -46,13 +37,11 @@ const Profile = ({data}) => {
 
 
 Profile.propTypes = {
-    avatar: PropTypes.string,
-    username: PropTypes.string,
-    tag: PropTypes.string,
-    location: PropTypes.string,
-    followers: PropTypes.number,
-    views: PropTypes.number,
-    likes: PropTypes.number,
+  avatar: PropTypes.string.isRequired,
+  username: PropTypes.string.isRequired,
+  tag: PropTypes.string.isRequired,
+  location: PropTypes.string.isRequired,
+  stats: PropTypes.objectOf(PropTypes.number).isRequired,
 }
 
 export default Profile;

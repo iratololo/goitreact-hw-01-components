@@ -13,7 +13,7 @@ import transactions from "./data/transactions.json"
  const App = () => {
   return (
     <Container>
-      <ProfilePage><Profile data={user} />
+      <ProfilePage><Profile username={user.username} tag={user.tag} avatar={user.avatar} location={user.location} stats={user.stats}/>
       <FriendList friends={friends} />
       </ProfilePage>
       <Statistics title="Upload stats" stats={data} />

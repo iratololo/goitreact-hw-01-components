@@ -1,10 +1,6 @@
 import PropTypes from 'prop-types';
 
-import { StatisticsList } from "./StatisticsList.stayled"
-import { StatisticsItem } from "./StatisticsItem.stayled"
-import { StatisticsLabel } from "./StatisticsLabel.stayled"
-import { StatisticsPercent } from "./StatisticsPercent.stayled"
-import {StatisticsTitle } from "./StatisticsTitle.stayled"
+import {StatisticsItem, StatisticsLabel, StatisticsList, StatisticsPercent, StatisticsTitle} from "./Statistics.stayled"
 
 const Statistics = ({ title, stats }) => {
     return (<section className="statistics">
@@ -20,7 +16,7 @@ const Statistics = ({ title, stats }) => {
 
 Statistics.propTypes = {
     title: PropTypes.string,
-    stats: PropTypes.array,
+    stats: PropTypes.arrayOf(PropTypes.object).isRequired,
 }
 
 export default Statistics;

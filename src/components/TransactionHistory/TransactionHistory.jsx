@@ -1,10 +1,6 @@
 import PropTypes from 'prop-types';
 
-import { Table } from "./Table.stayled"
-import { TableHead } from "./TableHead.stayled"
-import { TableHeadItem } from "./TableHeadItem.stayled"
-import { TableRow } from "./TableRow.stayled"
-import { TableItem} from "./TableItem.stayled"
+import { Table, TableHead, TableHeadItem, TableItem, TableRow } from "./TransactionHistory.stayled"
 
 const TransactionHistory = ({ items }) => {
   return (
@@ -28,7 +24,7 @@ const TransactionHistory = ({ items }) => {
 };
 
 TransactionHistory.propTypes = {
-    items: PropTypes.array,
+    items: PropTypes.arrayOf(PropTypes.object).isRequired,
 }
 
 export default TransactionHistory;
